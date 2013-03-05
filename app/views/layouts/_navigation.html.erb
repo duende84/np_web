@@ -1,4 +1,24 @@
-<%= link_to "Nuestros Precios", root_path, :class => 'brand' %>
+<%= link_to "NuestrosPrecios", root_path, :class => 'brand' %>
 <ul class="nav pull-right">
-  <li><%= link_to "Sign Up", root_path %></li>
+	<li class="dropdown" id="accountmenu">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    	<%= image_tag("user.png", :alt => "Usuarios") %>
+    	<!-- <b class="caret"></b> -->
+    </a>
+    <ul class="dropdown-menu">
+        <li><%= link_to "Ingresar", root_path %></li>
+        <!-- <li class="divider"></li> -->
+        <li><%= link_to "Registrarse", root_path %></li>
+    </ul>
+	</li>
+
+  <li class="dropdown" id="accountmenu">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    	<%= image_tag("cog.png", :alt => "Opciones") %>
+    </a>
+    <ul class="dropdown-menu">
+        <li><%= link_to "Ciudad", root_path %></li>
+        <li><%= link_to "Idioma", root_path %></li>
+    </ul>
+	</li>
 </ul>
