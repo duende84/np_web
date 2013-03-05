@@ -1,5 +1,8 @@
 <%= link_to "NuestrosPrecios", root_path, :class => 'brand' %>
 <ul class="nav pull-right">
+	<form class="navbar-search pull-left">
+	  <input type="text" class="search-query" placeholder="Buscar">
+	</form>
 	<li class="dropdown" id="accountmenu">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
     	<%= image_tag("user.png", :alt => "Usuarios") %>
