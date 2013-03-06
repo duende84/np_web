@@ -1,3 +1,26 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#reg_form{
+	position: relative;
+	left: 12%;
+	width: 55%;
+}
+
+.text_field_form{
+	position: relative;
+	left: 4%;
+	width: 90%;
+}
+
+.label_form{
+	position: relative;
+	left: 8%;
+}
+
+.btn_form{
+	position: relative;
+	margin-top: 5%;
+	left: 8%;
+}
