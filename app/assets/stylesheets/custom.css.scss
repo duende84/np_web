@@ -30,3 +30,16 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
+/* Forms */
+
+.bg_form{
+  margin-top: 45px;
+  margin-left: 50px;
+  padding-left: 50px;
+  background-color: #ccc;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
