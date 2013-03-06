@@ -1,0 +1,38 @@
+<!-- <h1>New user</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', users_path %> -->
+
+<% provide(:title, 'Sign up') %>
+<h1>Registrarse</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.label :nombre %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirme el password" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Crear mi cuenta", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
