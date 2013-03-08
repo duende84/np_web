@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  padding-top: 60px;
+  background-color: #03bcca;
+  background-image: url('fondo2.png');
+  background-repeat:repeat;
+}

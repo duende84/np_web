@@ -1,18 +1,11 @@
-@import "bootstrap";
-
-body {
-  padding-top: 60px;
-  background-color: #03bcca;
-  background-image: url('fondo.png');
-  background-repeat:no-repeat;
-}
-
-@import "bootstrap-responsive";
-
 @media screen {
   h1{
   	font-size: 30px;
   	text-align:center;
+  }
+
+  label{
+    font-size: 15px;
   }
 }
 
@@ -20,11 +13,19 @@ body {
   h1{
   	font-size: 25px;
   }
+
+  label{
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 800px){
  h1{
-  	font-size: 20px
+  	font-size: 20px;
+  }
+
+  label{
+    font-size: 12px;
   }
 }
 

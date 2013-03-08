@@ -32,4 +32,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
+  def random_nick
+    first_name = self.name.split(' ').first
+    self.nickname = "#{first_name}_#{(rand() * 100).to_i}"
+  end
 end

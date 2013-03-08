@@ -3,9 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #reg_form{
-	position: relative;
-	left: 12%;
-	width: 55%;
+	width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  margin: auto;
 }
 
 .text_field_form{
