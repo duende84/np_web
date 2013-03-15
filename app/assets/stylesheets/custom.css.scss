@@ -1,4 +1,9 @@
-$grayMediumLight: #eaeaea;
+body {
+  background-color: #03bcca;
+  background-image: url('fondo.png');
+  background-repeat:repeat;
+  padding-top: 60px;
+}
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -19,20 +24,6 @@ $grayMediumLight: #eaeaea;
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
-/* Forms */
-
 .bg_form{
   margin:40px 5px 15px 50px;
   padding:20px 5px 20px 20px;
@@ -43,5 +34,21 @@ input {
 .bg_position{
   position: relative;
   left: 20%;
+}
 
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  input {
+    border-color: #B94A48;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border-style:solid;
+    border-width:2px;
+  }
 }

@@ -2,18 +2,19 @@
 #
 # Table name: users
 #
-#  id           :integer          not null, primary key
-#  name         :string(255)
-#  nickname     :string(255)
-#  password     :string(255)
-#  email        :string(255)
-#  phone        :string(255)
-#  birthday     :date
-#  gender       :string(255)
-#  city_id      :integer
-#  user_type_id :integer
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  nickname        :string(255)
+#  password        :string(255)
+#  email           :string(255)
+#  phone           :string(255)
+#  birthday        :date
+#  gender          :string(255)
+#  city_id         :integer
+#  user_type_id    :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  password_digest :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -34,6 +35,6 @@ class User < ActiveRecord::Base
 
   def random_nick
     first_name = self.name.split(' ').first
-    self.nickname = "#{first_name}_#{(rand() * 100).to_i}"
+    self.nickname = "#{first_name}#{(rand() * 100).to_i}"
   end
 end
