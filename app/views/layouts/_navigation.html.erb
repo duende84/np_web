@@ -9,9 +9,15 @@
     	<!-- <b class="caret"></b> -->
     </a>
     <ul class="dropdown-menu">
-        <li><%= link_to "Ingresar", root_path %></li>
+      <% if signed_in? %>
+        <li><%= link_to "Perfil", current_user %></li>
+        <li class="divider"></li>
+        <li><%= link_to "Salir", signout_path, method: "delete" %></li>
+      <% else %>
+        <li><%= link_to "Ingresar", signin_path %></li>
         <!-- <li class="divider"></li> -->
         <li><%= link_to "Registrate", signup_path %></li>
+      <% end %>
     </ul>
 	</li>
 

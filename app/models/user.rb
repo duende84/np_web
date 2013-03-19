@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 
   before_save { email.downcase! }
+  before_save :create_remember_token
 
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -36,5 +37,11 @@ class User < ActiveRecord::Base
   def random_nick
     first_name = self.name.split(' ').first
     self.nickname = "#{first_name}#{(rand() * 100).to_i}"
+  end
+
+  private
+
+  def create_remember_token
+    self.remember_token = SecureRandom.urlsafe_base64
   end
 end
