@@ -14,6 +14,23 @@ class SessionsController < ApplicationController
     end
   end
 
+  def create_omniauth
+    auth_hash = request.env['omniauth.auth']
+
+    if signed_in?
+      # Means our user is signed in. Add the authorization to the user
+      user = User.find(current_user.id).add_provider(auth_hash)
+    else
+      # Log him in or sign him up
+      auth = Authorization.find_or_create(auth_hash)
+
+      # Create the session
+      user = User.find(auth.user.id)
+      sign_in user
+    end
+      redirect_to user
+  end
+
   def destroy
     sign_out
     redirect_to root_url

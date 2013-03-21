@@ -14,8 +14,9 @@
 
         <%= f.submit "Iniciar sesion", class: "btn btn-primary btn_form" %>
       <% end %>
-
       <p>¿Usuario nuevo? <%= link_to "Registrate ahora!", signup_path %></p>
+
+      <%= button_to "Facebook", "/auth/facebook", :form_class =>"separator",  class: "btn btn-primary" %>
     </div>
   </div>
 </div>

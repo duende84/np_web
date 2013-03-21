@@ -20,6 +20,8 @@
 class User < ActiveRecord::Base
   attr_accessible :birthday, :city_id, :email, :gender, :name, :nickname, :password, :phone, :user_type_id, :password_confirmation
 
+  has_many :authorizations
+
 	has_secure_password
 
   before_save { email.downcase! }
@@ -37,6 +39,13 @@ class User < ActiveRecord::Base
   def random_nick
     first_name = self.name.split(' ').first
     self.nickname = "#{first_name}#{(rand() * 100).to_i}"
+  end
+
+  def add_provider(auth_hash)
+    # Check if the provider already exists, so we don't add it twice
+    unless authorizations.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
+      Authorization.create :user => self, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
+    end
   end
 
   private

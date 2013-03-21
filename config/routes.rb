@@ -7,6 +7,9 @@ NuestrosPrecios::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
+  match '/auth/:provider/callback', :to => 'sessions#create_omniauth'
+  #match '/auth/failure', :to => 'sessions#failure'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
