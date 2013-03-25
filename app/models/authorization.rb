@@ -25,13 +25,9 @@ class Authorization < ActiveRecord::Base
 		                       :nickname => auth_hash["info"]["nickname"],
 		                       :birthday => format_facebook_date(auth_hash["extra"]["raw_info"]["birthday"]),
 		                       :gender => auth_hash["extra"]["raw_info"]["gender"],
+		                       :user_type => UserType.find_by_name("facebook"),
 		                       :password => '1234567',
 		                       :password_confirmation => '1234567'
-	    else
-	    	User.find_by_email(auth_hash["info"]["email"]).update_attributes(
-	    		:birthday => format_facebook_date(auth_hash["extra"]["raw_info"]["birthday"]),
-	    		:gender => auth_hash["extra"]["raw_info"]["gender"]
-	    		)
 	    end
 		    auth = create :user => user, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
 	  end

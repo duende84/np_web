@@ -44,6 +44,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       @user.random_nick
+      @user.user_type = UserType.find_by_name("register")
       if @user.save
         sign_in @user
         format.html { redirect_to @user, notice: 'Usuario creado exitosamente.' }

@@ -9,11 +9,3 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   				   :scope => 'email,user_birthday'
 	end
 end
-
-# Heroku credentials
-	# App ID:	500414270016500
-	# App Secret:	882c5e95753ef6ec7f216969b4d405ce
-
-# Localhost credentials
-	# App ID:	584950538198110
-  # App Secret:	d12da22d298e172a824a65da7c27ef06

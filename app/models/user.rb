@@ -19,9 +19,11 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :birthday, :city_id, :email, :gender, :name, :nickname, :password, :phone, :user_type_id, :password_confirmation
+  attr_accessible :birthday, :city_id, :email, :gender, :name, :nickname,
+  :password, :phone, :user_type_id, :password_confirmation, :user_type
 
   has_many :authorizations
+  belongs_to :user_type
 
 	has_secure_password
 
