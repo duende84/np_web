@@ -46,6 +46,9 @@ class UsersController < ApplicationController
       @user.random_nick
       @user.user_type = UserType.find_by_name("register")
       if @user.save
+        # Tell the UserMailer to send a welcome Email after save
+        UserMailer.welcome_email(@user).deliver
+
         sign_in @user
         format.html { redirect_to @user, notice: 'Usuario creado exitosamente.' }
         format.json { render json: @user, status: :created, location: @user }

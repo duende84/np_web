@@ -28,6 +28,9 @@ class SessionsController < ApplicationController
       # Create the session
       user = User.find(auth.user.id)
       sign_in user
+
+      # Tell the UserMailer to send a welcome Email after save
+      UserMailer.welcome_email(user).deliver
     end
       redirect_to user, notice: 'Bienvenido a Nuestros Precios.'
   end
