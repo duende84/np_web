@@ -1,0 +1,15 @@
+<div id="reg_form" class="bg_form">
+  <h1>Listing countries</h1>
+
+  <table>
+    <tr>
+      <th>Name</th>
+    </tr>
+
+  <% @countries.each do |country| %>
+    <tr>
+      <td><%= country.name %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
