@@ -1,1 +1,4 @@
-<%= gmaps4rails(@json) %>
+<%= gmaps(
+	:map_options => { :detect_location => true, :auto_adjust => true },
+  :markers     => { :data => @json }) %>
+<%= yield :scripts %>

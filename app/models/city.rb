@@ -13,7 +13,9 @@
 #
 
 class City < ActiveRecord::Base
-  attr_accessible :latitude, :longitude, :name, :slogan
+  attr_accessible :latitude, :longitude, :name, :slogan, :country
+
+  belongs_to :country
 
   acts_as_gmappable
 
