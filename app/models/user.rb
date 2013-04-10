@@ -20,10 +20,11 @@
 
 class User < ActiveRecord::Base
   attr_accessible :birthday, :city_id, :email, :gender, :name, :nickname,
-  :password, :phone, :user_type_id, :password_confirmation, :user_type
+  :password, :phone, :user_type_id, :password_confirmation, :user_type, :city
 
   has_many :authorizations
   belongs_to :user_type
+  belongs_to :city
 
 	has_secure_password
 

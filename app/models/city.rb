@@ -10,12 +10,16 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  gmaps      :boolean
+#  country_id :integer
 #
 
 class City < ActiveRecord::Base
-  attr_accessible :latitude, :longitude, :name, :slogan, :country
+  attr_accessible :latitude, :longitude, :name, :slogan, :country_id, :country
 
   belongs_to :country
+  has_many :users
+
+  validates :name, uniqueness: { case_sensitive: false }
 
   acts_as_gmappable
 

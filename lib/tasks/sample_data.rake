@@ -41,8 +41,10 @@ def make_cities
   puts "-- Cities  --"
   puts "----------------"
 
-  City.create!(name: "Manizales", slogan: "La ciudad de las puertas abiertas")
-  City.create!(name: "Pereira", slogan: "Pereira")
-  City.create!(name: "Medellin", slogan: "Medellin")
-  City.create!(name: "Bogota", slogan: "Bogota")
+  country = Country.find_by_name("Colombia")
+
+  City.create!(name: "Manizales", slogan: "La ciudad de las puertas abiertas", country: country)
+  City.create!(name: "Pereira", slogan: "Pereira", country: country)
+  City.create!(name: "Medellin", slogan: "Medellin", country: country)
+  City.create!(name: "Bogota", slogan: "Bogota", country: country)
 end
