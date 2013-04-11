@@ -8,6 +8,7 @@ NuestrosPrecios::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/cities',  to: 'cities#index'
   match '/countries',  to: 'countries#index'
+  match '/companies',  to: 'companies#index'
 
   match '/auth/:provider/callback', :to => 'sessions#create_omniauth'
   #match '/auth/failure', :to => 'sessions#failure'

@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   :password, :phone, :user_type_id, :password_confirmation, :user_type, :city
 
   has_many :authorizations
+  has_many :companies
   belongs_to :user_type
   belongs_to :city
 
