@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
 
   has_many :authorizations
   has_many :companies
+  has_many :company_branches
   belongs_to :user_type
   belongs_to :city
 

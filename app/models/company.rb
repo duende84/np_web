@@ -16,4 +16,5 @@ class Company < ActiveRecord::Base
   attr_accessible :email, :name, :nit, :owner_id, :web_site, :owner
 
   belongs_to :owner, class_name: 'User'
+  has_many :company_branches
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411135510) do
+ActiveRecord::Schema.define(:version => 20130418043628) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(:version => 20130411135510) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "branch_categories", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "cities", :force => true do |t|
@@ -42,10 +49,35 @@ ActiveRecord::Schema.define(:version => 20130411135510) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "company_branches", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "email"
+    t.float    "ranking"
+    t.integer  "category_id"
+    t.integer  "city_id"
+    t.integer  "company_id"
+    t.integer  "admin_id"
+    t.integer  "subscription_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "countries", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.float    "price"
+    t.string   "description"
+    t.integer  "stock"
+    t.integer  "branch_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "user_types", :force => true do |t|
