@@ -1,8 +1,33 @@
 <div id="reg_form" class="bg_form">
-	<h1>Editing user</h1>
+	<h1>Editar Perfil</h1>
 
-	<%= render 'form' %>
+	<div class="row">
+    <div class="span6">
+    	<%= form_for(@user) do |f| %>
+    		<%= render 'shared/error_messages' %>
 
-	<%= link_to 'Show', @user %> |
-	<%= link_to 'Back', users_path %>
+				<%= f.label :nombre, :class => "label_form" %>
+		    <%= f.text_field :name, :class => "text_field_form"  %>
+
+		    <%= f.label :usuario, :class => "label_form" %>
+		    <%= f.text_field :nickname, :class => "text_field_form"  %>
+
+		    <%= f.label :email, :class => "label_form" %>
+		    <%= f.text_field :email, :class => "text_field_form"  %>
+
+		    <%= f.label :telefono, :class => "label_form" %>
+		    <%= f.text_field :phone, :class => "text_field_form"  %>
+
+		    <%= f.label :fecha_de_cumpleaños, :class => "label_form" %>
+		    <%= f.text_field :birthday, :class => "text_field_form"  %>
+
+		    <%= f.label :sexo, :class => "label_form" %>
+		    <%= f.text_field :gender, :class => "text_field_form"  %>
+
+		    <%= f.submit "Guardar", class: "btn btn-primary btn_form"%>
+		  <% end %>
+		  <hr>
+			<%= link_to 'Regresar', @user %>
+		</div>
+  </div>
 </div>

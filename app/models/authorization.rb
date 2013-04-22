@@ -24,7 +24,7 @@ class Authorization < ActiveRecord::Base
 		                       :email => auth_hash["info"]["email"],
 		                       :nickname => auth_hash["info"]["nickname"],
 		                       :birthday => format_facebook_date(auth_hash["extra"]["raw_info"]["birthday"]),
-		                       :gender => auth_hash["extra"]["raw_info"]["gender"],
+		                       :gender => translate_gender(auth_hash["extra"]["raw_info"]["gender"]),
 		                       :user_type => UserType.find_by_name("facebook"),
 		                       :password => auth_hash["uid"],
 		                       :password_confirmation => auth_hash["uid"]
@@ -37,5 +37,13 @@ class Authorization < ActiveRecord::Base
 
 	def self.format_facebook_date(date)
 	 	return "#{date[6..9]}-#{date[0..1]}-#{date[3..4]}"
+	end
+
+	def self.translate_gender(gender)
+		if gender == 'male'
+			return 'Hombre'
+		elsif gender == 'female'
+			return 'Mujer'
+		end
 	end
 end

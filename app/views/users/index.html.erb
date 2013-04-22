@@ -1,41 +1,21 @@
 <div id="reg_form" class="bg_form">
-  <h1>Listing users</h1>
-
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Nickname</th>
-      <th>Password</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Birthday</th>
-      <th>Gender</th>
-      <th>City</th>
-      <th>User type</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
+  <h1>Listado de usuarios registrados</h1>
 
   <% @users.each do |user| %>
-    <tr>
-      <td><%= user.name %></td>
-      <td><%= user.nickname %></td>
-      <td><%= user.password %></td>
-      <td><%= user.email %></td>
-      <td><%= user.phone %></td>
-      <td><%= user.birthday %></td>
-      <td><%= user.gender %></td>
-      <td><%= user.city_id %></td>
-      <td><%= user.user_type_id %></td>
-      <td><%= link_to 'Show', user %></td>
-      <td><%= link_to 'Edit', edit_user_path(user) %></td>
-      <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+    <hr>
+    <div class="user">
+        <p><%= user.name %></p>
+        <p><%= user.nickname %></p>
+        <p><%= user.email %></p>
+        <p><%= user.phone %></p>
+        <p><%= user.birthday %></p>
+        <p><%= user.gender %></p>
+        <p><%= user.city_id %></p>
+        <p><%= user.user_type.name %></p>
+        <p><%= link_to 'Mostrar', user %> - <%= link_to 'Editar', edit_user_path(user) %> - <%= link_to 'Eliminar', user, method: :delete, data: { confirm: '¿Estas seguro?' } %></p>
+    </div>
   <% end %>
-  </table>
 
-  <br />
-
-  <%= link_to 'New User', new_user_path %>
+  <hr>
+  <%= link_to 'Nuevo usuario', new_user_path %>
 </div>

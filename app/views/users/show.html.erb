@@ -2,12 +2,12 @@
 <div class="row">
   <div id="reg_form" class="bg_form">
     <p>
-      <b>Name:</b>
+      <b>Nombre:</b>
       <%= @user.name %>
     </p>
 
     <p>
-      <b>Nickname:</b>
+      <b>Usuario:</b>
       <%= @user.nickname %>
     </p>
 
@@ -17,31 +17,24 @@
     </p>
 
     <p>
-      <b>Phone:</b>
+      <b>Telefono:</b>
       <%= @user.phone %>
     </p>
 
     <p>
-      <b>Birthday:</b>
+      <b>Fecha de cumpleaños:</b>
       <%= @user.birthday %>
     </p>
 
     <p>
-      <b>Gender:</b>
+      <b>Sexo:</b>
       <%= @user.gender %>
     </p>
 
     <p>
-      <b>City:</b>
-      <%= @user.city_id %>
+      <b>Ciudad:</b>
+      <%#= @user.city.name %>
     </p>
-
-    <p>
-      <b>User type:</b>
-      <%= @user.user_type_id %>
-    </p>
-
-    <%= link_to 'Edit', edit_user_path(@user) %> |
-    <%= link_to 'Back', users_path %>
+    <%= link_to 'Editar Perfil', edit_user_path(@user) %>
   </div>
 </div>
