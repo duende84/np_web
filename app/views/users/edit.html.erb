@@ -19,10 +19,10 @@
 		    <%= f.text_field :phone, :class => "text_field_form"  %>
 
 		    <%= f.label :fecha_de_cumpleaños, :class => "label_form" %>
-		    <%= f.text_field :birthday, :class => "text_field_form"  %>
+		    <%= f.datepicker :birthday, :class => "text_field_form"  %>
 
 		    <%= f.label :sexo, :class => "label_form" %>
-		    <%= f.text_field :gender, :class => "text_field_form"  %>
+		    <%= f.select :gender, options_for_select(%w[Hombre Mujer]) %>
 
 		    <%= f.submit "Guardar", class: "btn btn-primary btn_form"%>
 		  <% end %>

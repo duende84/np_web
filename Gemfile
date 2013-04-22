@@ -25,6 +25,7 @@ group :assets do
 end
 
 gem 'jquery-rails', '2.0.2'
+gem "jquery_datepicker", "~> 0.4"
 gem 'bcrypt-ruby', '3.0.1'
 
 group :development do
