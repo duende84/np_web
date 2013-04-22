@@ -31,10 +31,13 @@
       <%= @user.gender %>
     </p>
 
-    <p>
-      <b>Ciudad:</b>
-      <%#= @user.city.name %>
-    </p>
+    <% if (!@user.city.nil?) %>
+      <p>
+        <b>Ciudad:</b>
+        <%= @user.city.name %>
+      </p>
+    <% end %>
+
     <%= link_to 'Editar Perfil', edit_user_path(@user) %>
   </div>
 </div>

@@ -22,7 +22,20 @@
 		    <%= f.datepicker :birthday, :class => "text_field_form"  %>
 
 		    <%= f.label :sexo, :class => "label_form" %>
-		    <%= f.select :gender, options_for_select(%w[Hombre Mujer]) %>
+		    <%= f.select :gender, options_for_select(%w[Hombre Mujer]), options ={}, :class => "select_form"%>
+
+		    <%= f.label :ciudad, :class => "label_form" %>
+		    <% if (@user.city.nil?) %>
+		    <%= f.collection_select :city, City.all, :id, :name, {:include_blank => 'Seleccione una ciudad'},:class => "select_form" %>
+		    <% else %>
+		    <%= f.collection_select :city, City.all, :id, :name, {:selected => @user.city.id},:class => "select_form" %>
+		    <% end %>
+
+		    <%= f.label :password, :class => "label_form" %>
+        <%= f.password_field :password, :class => "text_field_form" %>
+
+        <%= f.label :password_confirmation, "Confirmar password", :class => "label_form" %>
+        <%= f.password_field :password_confirmation, :class => "text_field_form" %>
 
 		    <%= f.submit "Guardar", class: "btn btn-primary btn_form"%>
 		  <% end %>

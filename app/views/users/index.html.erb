@@ -10,7 +10,9 @@
         <p><%= user.phone %></p>
         <p><%= user.birthday %></p>
         <p><%= user.gender %></p>
-        <p><%= user.city_id %></p>
+        <% if (!user.city.nil?) %>
+          <p><%= user.city.name %></p>
+        <% end %>
         <p><%= user.user_type.name %></p>
         <p><%= link_to 'Mostrar', user %> - <%= link_to 'Editar', edit_user_path(user) %> - <%= link_to 'Eliminar', user, method: :delete, data: { confirm: '¿Estas seguro?' } %></p>
     </div>
