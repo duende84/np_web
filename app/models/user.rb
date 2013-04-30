@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   attr_accessible :birthday, :city_id, :email, :gender, :name, :nickname,
   :password, :phone, :user_type_id, :password_confirmation, :user_type, :city
 
+  attr_accessor :skip_password_validation
+
   has_many :authorizations
   has_many :companies
   has_many :company_branches
@@ -39,8 +41,8 @@ class User < ActiveRecord::Base
                     format:     { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   validates :nickname, uniqueness: { case_sensitive: false }
-  validates :password, presence: true, length: { minimum: 6 }
-  validates :password_confirmation, presence: true
+  validates :password, :presence => true, length: { minimum: 6 }, :unless => :skip_password_validation
+  validates :password_confirmation, presence: true, :unless => :skip_password_validation
 
   def random_nick
     first_name = self.name.split(' ').first
@@ -51,6 +53,14 @@ class User < ActiveRecord::Base
     # Check if the provider already exists, so we don't add it twice
     unless authorizations.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
       Authorization.create :user => self, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
+    end
+  end
+
+  def custom_update_attributes(params)
+    if params[:password].blank?
+      params.delete :password
+      params.delete :password_confirmation
+      update_attributes params
     end
   end
 

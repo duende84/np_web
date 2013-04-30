@@ -31,16 +31,13 @@
 		    <%= f.collection_select :city, City.all, :id, :name, {:selected => @user.city.id},:class => "select_form" %>
 		    <% end %>
 
-		    <%= f.label :password, :class => "label_form" %>
-        <%= f.password_field :password, :class => "text_field_form" %>
-
-        <%= f.label :password_confirmation, "Confirmar password", :class => "label_form" %>
-        <%= f.password_field :password_confirmation, :class => "text_field_form" %>
-
 		    <%= f.submit "Guardar", class: "btn btn-primary btn_form"%>
 		  <% end %>
 		  <hr>
-			<%= link_to 'Regresar', @user %>
+			<p>
+				<%= link_to 'Regresar', @user %> -
+				<%= link_to 'Cambiar contraseña', password_user_path(@user) %>
+			</p>
 		</div>
   </div>
 </div>

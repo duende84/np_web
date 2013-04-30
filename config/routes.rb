@@ -1,6 +1,12 @@
 NuestrosPrecios::Application.routes.draw do
 
-  resources :users
+  resources :users do
+    member do
+      get 'password'
+      put 'update_password'
+    end
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signup',  to: 'users#new'
@@ -11,7 +17,6 @@ NuestrosPrecios::Application.routes.draw do
   match '/companies',  to: 'companies#index'
 
   match '/auth/:provider/callback', :to => 'sessions#create_omniauth'
-  #match '/auth/failure', :to => 'sessions#failure'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
