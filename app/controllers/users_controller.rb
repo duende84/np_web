@@ -60,6 +60,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def create_json
+    @user = User.new(params[:user])
+    if @user.save
+      render json: @users
+    else
+      render json: "error"
+    end
+end
+
   # PUT /users/1
   # PUT /users/1.json
   def update
