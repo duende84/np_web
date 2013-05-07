@@ -18,7 +18,7 @@ NuestrosPrecios::Application.routes.draw do
 
   match '/auth/:provider/callback', :to => 'sessions#create_omniauth'
 
-  match '/api/users/new', :to => 'users#create_json'
+  match '/api/users/new', :to => 'users#create_json', :via => [:post]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
