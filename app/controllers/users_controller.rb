@@ -62,10 +62,12 @@ class UsersController < ApplicationController
 
   def create_json
     @user = User.new(params[:user])
+    @user.random_nick
+    @user.user_type = UserType.find_by_name("android")
     if @user.save
-      render json: @users
+      render json: @user
     else
-      render json: "error"
+      render json: @user.errors
     end
 end
 

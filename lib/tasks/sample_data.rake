@@ -21,6 +21,7 @@ def make_user_types
 	UserType.create!(name: "admin")
 	UserType.create!(name: "register")
 	UserType.create!(name: "facebook")
+  UserType.create!(name: "android")
 end
 
 def make_countries
