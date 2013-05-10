@@ -1,6 +1,5 @@
 body {
-  background-color: #03bcca;
-  background-image: url('fondo.png');
+  background-color: white;
   background-repeat:repeat;
 }
 
@@ -19,39 +18,4 @@ body {
   margin-top: 45px;
   margin-left: 50px;
   @include box_sizing;
-}
-
-.img_brand{
-  padding: 5px 20px !important;
-}
-
-/* forms */
-
-.bg_form{
-  margin:40px 5px 15px 50px;
-  padding:20px 5px 20px 20px;
-  background-color: #ccc;
-  border-radius: 15px;
-}
-
-.bg_position{
-  position: relative;
-  left: 20%;
-}
-
-#error_explanation {
-  color: #f00;
-  ul {
-    list-style: none;
-    margin: 0 0 18px 0;
-  }
-}
-
-.field_with_errors {
-  input {
-    border-color: #B94A48;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    border-style:solid;
-    border-width:2px;
-  }
 }

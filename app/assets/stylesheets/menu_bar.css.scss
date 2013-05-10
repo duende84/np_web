@@ -1,0 +1,33 @@
+.gradient{
+  background-image: linear-gradient(top, rgba(6,145,171,0) 0%, rgba(6,145,171,0) 25%,  rgba(6,145,171,0.8) 35%, rgba(6,145,171,1) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(6,145,171,0) 0%, rgba(6,145,171,0) 25%,  rgba(6,145,171,0.8) 35%, rgba(6,145,171,1) 100%);
+  background-image: -moz-linear-gradient(top, rgba(6,145,171,0) 0%, rgba(6,145,171,0) 25%,  rgba(6,145,171,0.8) 35%, rgba(6,145,171,1) 100%);
+  background-image: -o-linear-gradient(top, rgba(6,145,171,0) 0%, rgba(6,145,171,0) 25%,  rgba(6,145,171,0.8) 35%, rgba(6,145,171,1) 100%);
+  background-image: -ms-linear-gradient(top, rgba(6,145,171,0) 0%, rgba(6,145,171,0) 25%,  rgba(6,145,171,0.8) 35%, rgba(6,145,171,1) 100%);
+}
+
+.menu_bar{
+  position: absolute;
+  width: 100%;
+  position:fixed;
+  bottom:0px;
+  left: 0px;
+}
+
+.btn_bar{
+	position: relative;
+	right: -94%;
+}
+
+@media screen and (max-width: 1150px){
+	.btn_bar{
+		right: -92%;
+	}
+}
+
+@media screen and (max-width: 1000px){
+	.btn_bar{
+		position: relative;
+		right: -89%;
+	}
+}

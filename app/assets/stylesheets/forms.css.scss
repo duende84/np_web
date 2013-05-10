@@ -1,0 +1,75 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#reg_form{
+	width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+.bg_form{
+  margin:40px 5px 15px 50px;
+  padding:20px 5px 20px 20px;
+  background-color: #ccc;
+  border-radius: 15px;
+}
+
+.bg_position{
+  position: relative;
+  left: 20%;
+}
+
+.text_field_form{
+	position: relative;
+	left: 4%;
+	width: 88%;
+}
+
+.label_form{
+	position: relative;
+	left: 8%;
+}
+
+.select_form{
+	position: relative;
+	left: 4%;
+	width: 90%;
+}
+
+.btn_form{
+	position: relative;
+	margin-top: 3%;
+	left: 8%;
+}
+
+.separator{
+	border-top: 1px solid #DCDCDC;
+	padding-top: 2%;
+	width: 98%;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  input {
+    border-color: #B94A48;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border-style:solid;
+    border-width:2px;
+  }
+
+  textarea {
+    border-color: #B94A48;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border-style:solid;
+    border-width:2px;
+  }
+}
