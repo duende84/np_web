@@ -2,7 +2,61 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.img_bg{
-  width: 60%;
-  margin: 20px 20%;
+@font-face{
+	font-family: berlinSans;
+	src: url('fonts/berlin-sans-fb-demi-bold.ttf');
+}
+
+#search-form{
+	width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  margin: 10% auto auto;
+}
+
+#search-form>input{
+  border-radius: 15px;
+  border-color: #1b9ab2;
+  border-style:solid;
+  border-width:2px;
+  box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.075) inset;
+}
+
+#search-form>h1{
+	font-size: 60px;
+	font-family: berlinSans;
+}
+
+#polar-content{
+	height: 300px;
+}
+
+@media screen and (min-width: 1000px){
+	#search-form>input{
+		width: 600px;
+		height: 70px;
+		font-size: 30px;
+
+	  border-radius: 15px;
+	  border-color: #1b9ab2;
+	  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	  border-style:solid;
+	  border-width:2px;
+	}
+}
+
+@media screen and (max-width: 850px){
+  #search-form>input{
+    width: 450px;
+    height: 50px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  #search-form>input{
+    width: 350px;
+    height: 40px;
+    font-size: 22px;
+  }
 }
