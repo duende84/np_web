@@ -1,1 +1,18 @@
-<%= image_tag("logo2.png", :alt => "NuestrosPrecios", :class => "btn_bar") %>
+<div class="menu_bar gradient">
+	<%= image_tag("logo2.png", :alt => "NuestrosPrecios", :class => "btn_bar", :id => "btnBar") %>
+	<div id="dialog-confirm" title="Opciones" style="display: none">
+		<% if signed_in? %>
+	    <%= link_to "Mi perfil: "+current_user.name, current_user %>
+	    <br>
+	    <%= link_to "Salir", signout_path, method: "delete" %>
+	  <% else %>
+	    <%= link_to "Ingresar", signin_path %>
+	    <br>
+	    <%= link_to "Registrate", signup_path %>
+	  <% end %>
+	  <br>
+	  <%= link_to "Ciudades", cities_path %>
+	  <br>
+	  <%= link_to "Paises", countries_path %>
+	</div>
+</div>
