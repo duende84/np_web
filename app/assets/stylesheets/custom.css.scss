@@ -8,14 +8,20 @@
   to { background-position: 1000% 100%; }
 }
 
+@-webkit-keyframes animatedBackground {
+  from { background-position: 0% 100%; }
+  to { background-position: 1000% 100%; }
+}
+
 body {
   background-color: #9BD5FB;
   background-repeat:repeat-x;
   background-image: url(/assets/city.png);
-  background-position:0 100;
+  background-position:0 100%;
   background-attachment:fixed;
 
   animation: animatedBackground 100s ease-in-out infinite;
+  -webkit-animation: animatedBackground 100s ease-in-out infinite;
 }
 
 @mixin box_sizing {
