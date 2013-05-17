@@ -1,6 +1,21 @@
+@font-face{
+  font-family: berlinSans;
+  src: url('fonts/berlin-sans-fb-demi-bold.ttf');
+}
+
+@keyframes animatedBackground {
+  from { background-position: 0% 100%; }
+  to { background-position: 1000% 100%; }
+}
+
 body {
-  background-color: white;
-  background-repeat:repeat;
+  background-color: #9BD5FB;
+  background-repeat:repeat-x;
+  background-image: url(/assets/city.png);
+  background-position:0 100;
+  background-attachment:fixed;
+
+  animation: animatedBackground 100s ease-in-out infinite;
 }
 
 @mixin box_sizing {
@@ -19,3 +34,6 @@ body {
   margin-left: 50px;
   @include box_sizing;
 }
+
+
+

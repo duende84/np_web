@@ -1,5 +1,7 @@
 <div class="menu_bar gradient">
-	<%= image_tag("logo2.png", :alt => "NuestrosPrecios", :class => "btn_bar", :id => "btnBar") %>
+	<div>
+		<%= image_tag("logo2.png", :alt => "NuestrosPrecios", :class => "btn_bar", :id => "btnBar") %>
+	</div>
 	<div id="dialog-confirm" title="Opciones" style="display: none">
 		<% if signed_in? %>
 	    <%= link_to "Mi perfil: "+current_user.name, current_user %>

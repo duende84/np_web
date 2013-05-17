@@ -1,17 +1,13 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-@font-face{
-	font-family: berlinSans;
-	src: url('fonts/berlin-sans-fb-demi-bold.ttf');
-}
-
 #search-form{
-	width: -moz-fit-content;
+  width: -moz-fit-content;
   width: -webkit-fit-content;
   width: fit-content;
-  margin: 10% auto auto;
+  width:intrinsic;
+
+  margin: 3% auto auto;
 }
 
 #search-form>input{
@@ -33,9 +29,9 @@
 
 @media screen and (min-width: 1000px){
 	#search-form>input{
-		width: 600px;
-		height: 70px;
-		font-size: 30px;
+		width: 500px;
+		height: 50px;
+		font-size: 26px;
 
 	  border-radius: 15px;
 	  border-color: #1b9ab2;
