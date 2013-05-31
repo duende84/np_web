@@ -56,6 +56,25 @@ class User < ActiveRecord::Base
     end
   end
 
+  def admin?
+    if (self.user_type == UserType.find_by_name('admin')) && (self.user_type!= nil)
+      return true
+    else
+      return false
+    end
+  end
+
+  def register?
+    if ((self.user_type == UserType.find_by_name('register')) ||
+      (self.user_type == UserType.find_by_name('facebook')) ||
+      (self.user_type == UserType.find_by_name('android'))) &&
+      (self.user_type!= nil)
+      return true
+    else
+      return false
+    end
+  end
+
   def custom_update_attributes(params)
     if params[:password].blank?
       params.delete :password
