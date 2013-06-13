@@ -8,6 +8,7 @@ class Ability
     elsif user.register?
       can :read, :all
       can [:destroy, :update, :password, :update_password], User, :id => user.id
+      can :manage, Company, :owner_id => user.id
     else
       can :read, :all
       can :create, User

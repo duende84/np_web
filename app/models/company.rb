@@ -13,8 +13,10 @@
 #
 
 class Company < ActiveRecord::Base
-  attr_accessible :email, :name, :nit, :owner_id, :web_site, :owner
+  attr_accessible :email, :name, :nit, :owner_id, :web_site, :owner, :image, :remote_image_url
 
-  belongs_to :owner, class_name: 'User'
+  belongs_to :owner, class_name: 'User', :foreign_key => 'owner_id'
   has_many :company_branches
+
+  mount_uploader :image, CompanyImageUploader
 end

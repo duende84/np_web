@@ -5,11 +5,14 @@
     <tr>
       <th>Nombre</th>
     </tr>
-
-  <% @companies.each do |company| %>
-    <tr>
-      <td><%= company.name %></td>
-    </tr>
-  <% end %>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+      </tr>
+    <% end %>
   </table>
+  <hr>
+  <% if can? :create, Company %>
+    <%= link_to 'Nueva empresa', new_company_path %>
+  <% end %>
 </div>

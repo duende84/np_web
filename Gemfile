@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 gem 'rails', '3.2.13'
-gem 'json', '~>1.7.7'
+gem "json", "~> 1.8.0"
 
 # Postgresql
 gem 'pg', '~> 0.15.1'
@@ -16,6 +16,13 @@ gem "gmaps4rails", "~> 1.5.6"
 
 # Simple authorization for users roles
 gem "cancan", "~> 1.6.9"
+
+# Upload Image
+gem "rmagick", "~> 2.13.2"
+gem "carrierwave", "~> 0.8.0"
+
+# rackspace storage
+gem "fog", "~> 1.11.1"
 
 # Gems used only for assets and not required
 # in production environments by default.

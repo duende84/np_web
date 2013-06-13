@@ -7,6 +7,8 @@ NuestrosPrecios::Application.routes.draw do
     end
   end
 
+  resources :companies
+
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signup',  to: 'users#new'
@@ -14,7 +16,6 @@ NuestrosPrecios::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/cities',  to: 'cities#index'
   match '/countries',  to: 'countries#index'
-  match '/companies',  to: 'companies#index'
 
   match '/auth/:provider/callback', :to => 'sessions#create_omniauth'
 

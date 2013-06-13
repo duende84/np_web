@@ -1,0 +1,23 @@
+<% provide(:title, 'Companies') %>
+<div id="reg_form" class="bg_form blog_content">
+	<div class="justify_text company_content">
+	  <h3><%= @company.name %></h3>
+
+	  <% if !@company.image_url(:show).to_s.blank? %>
+			<p><%= image_tag @company.image_url(:show).to_s %></p>
+		<% end %>
+
+	  <p>
+		  <b>Email:</b>
+		  <%= @company.email %>
+		  <br>
+		  <b>Pagina Web:</b>
+		  <%= @company.web_site %>
+		</p>
+	</div>
+	<hr>
+	<% if can? :update, @company %>
+		<%= link_to 'Editar', edit_company_path(@company) %> |
+	<% end %>
+	<%= link_to 'Regresar', companies_path %>
+</div>
