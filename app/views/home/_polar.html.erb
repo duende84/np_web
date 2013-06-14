@@ -1,27 +1,13 @@
 <ul class="polaroideffect">
-  <li>
-    <%= image_tag("logo2.png", :alt => "NuestrosPrecios")%>
-    <br />
-    Nuestros Precios
-  </li>
-  <li>
-    <%= image_tag("logo2.png", :alt => "NuestrosPrecios")%>
-    <br />
-    Nuestros Precios
-  </li>
-  <li>
-    <%= image_tag("logo2.png", :alt => "NuestrosPrecios")%>
-    <br />
-    Nuestros Precios
-  </li>
-  <li>
-    <%= image_tag("logo2.png", :alt => "NuestrosPrecios")%>
-    <br />
-    Nuestros Precios
-  </li>
-  <li>
-    <%= image_tag("logo2.png", :alt => "NuestrosPrecios")%>
-    <br />
-    Nuestros Precios
-  </li>
+  <% Company.all.each do |company| %>
+    <%= link_to(company) do %>
+      <li>
+        <% if !company.image_url(:thumb).to_s.blank? %>
+          <%= image_tag company.image_url(:thumb).to_s %>
+        <% end %>
+        <br>
+        <%= company.name %>
+      </li>
+    <% end %>
+  <% end %>
 </ul>

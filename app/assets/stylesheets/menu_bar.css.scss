@@ -24,27 +24,18 @@
 
 .btn_bar{
 	position: relative;
-	right: -94%;
+	float: right;
 }
 
 .btn_bar:hover{
+  cursor: pointer;
+}
+
+.btn_bar:active{
   -webkit-transition: all 1s linear;
   -moz-transition: all 1s linear;
   -o-transition: all 1s linear;
 
-  right: -85%;
+  right: 2%;
   cursor: pointer;
-}
-
-@media screen and (max-width: 1150px){
-	.btn_bar{
-		right: -92%;
-	}
-}
-
-@media screen and (max-width: 1000px){
-	.btn_bar{
-		position: relative;
-		right: -89%;
-	}
 }

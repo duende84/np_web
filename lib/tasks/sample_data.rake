@@ -9,6 +9,8 @@ namespace :db do
     make_user_types
     make_countries
     make_cities
+    make_users
+    make_companies
   end
 end
 
@@ -38,9 +40,9 @@ end
 
 def make_cities
 
-  puts "----------------"
+  puts "--------------"
   puts "-- Cities  --"
-  puts "----------------"
+  puts "--------------"
 
   country = Country.find_by_name("Colombia")
 
@@ -48,4 +50,33 @@ def make_cities
   City.create!(name: "Pereira", slogan: "Pereira", country: country)
   City.create!(name: "Medellin", slogan: "Medellin", country: country)
   City.create!(name: "Bogota", slogan: "Bogota", country: country)
+end
+
+def make_users
+
+  puts "-------------"
+  puts "-- Users  --"
+  puts "-------------"
+
+  admin = UserType.find_by_name("admin")
+
+  @user = User.create!(name: "andres",
+    email: "andreselduende@gmail.com",
+    nickname: "duende84",
+    password:"admin123",
+    password_confirmation: "admin123",
+    user_type: admin)
+end
+
+def make_companies
+
+  puts "----------------"
+  puts "-- Companies  --"
+  puts "----------------"
+
+  15.times do |n|
+    Company.create!(name: "Company_#{n}",
+      remote_image_url: "http://20be948917086a968567-d6f97a9eba3cc258dac0d36dbb6d7ccd.r81.cf1.rackcdn.com/user2.png",
+      owner: @user)
+  end
 end
