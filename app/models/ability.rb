@@ -14,7 +14,7 @@ class Ability
       end
     else
       can :read, :all
-      can :create, User
+      can [:create, :create_json], User
     end
     #
     # The first argument to `can` is the action you are giving the user
