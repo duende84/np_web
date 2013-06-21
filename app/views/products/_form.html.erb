@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="span6">
+    <%= form_for @product, :html => { :multipart => true} do |f| %>
+      <%= render 'error_messages' %>
+
+      <%= f.label :name, 'Nombre', :class => "label_form" %>
+      <%= f.text_field :name, :class => "text_field_form" %>
+
+			<%= f.label :description, 'Descripcion', :class => "label_form" %>
+			<%= f.text_area :description, :class => "text_field_form", :size => "40x10" %>
+
+      <%= f.label :price, 'Precio', :class => "label_form" %>
+      <%= f.text_field :price, :class => "text_field_form" %>
+
+      <%= f.label :stock, 'Cantidad disponible', :class => "label_form" %>
+      <%= f.text_field :stock, :class => "text_field_form" %>
+
+      <%= f.label :branch, "Empresa", :class => "label_form" %>
+      <% if (@product.branch.nil?) %>
+		    <%= f.collection_select :branch_id, Company.all, :id, :name, {:include_blank => 'Seleccione una empresa'},:class => "select_form" %>
+		    <% else %>
+		    <%= f.collection_select :branch_id, Company.all, :id, :name, {:selected => @product.branch.id},:class => "select_form" %>
+		    <% end %>
+
+      <%= f.submit "Guardar", class: "btn btn-primary btn_form"%>
+
+    <% end %>
+  </div>
+</div>

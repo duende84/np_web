@@ -1,0 +1,23 @@
+<% provide(:title, 'Productos') %>
+<div id="reg_form" class="bg_form">
+  <h1>Listado de productos</h1>
+
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Disponibles</th>
+    </tr>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.stock %></td>
+      </tr>
+    <% end %>
+  </table>
+  <hr>
+  <% if can? :create, Product %>
+    <%= link_to 'Nuevo producto', new_product_path %>
+  <% end %>
+</div>

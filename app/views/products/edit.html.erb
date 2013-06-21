@@ -1,0 +1,9 @@
+<% provide(:title, @product.name) %>
+<div id="reg_form" class="bg_form">
+  <h1>Editar producto</h1>
+
+	<%= render 'form' %>
+	<hr>
+	<%= link_to 'Mostrar', @product %> |
+	<%= link_to 'Regresar', products_path %>
+</div>

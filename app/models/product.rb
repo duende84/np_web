@@ -14,5 +14,5 @@
 
 class Product < ActiveRecord::Base
   attr_accessible :branch_id, :description, :name, :price, :stock, :branch
-  belongs_to :branch, class_name: 'CompanyBranch'
+  belongs_to :branch, class_name: 'Company'
 end

@@ -11,6 +11,7 @@ namespace :db do
     make_cities
     make_users
     make_companies
+    make_products
   end
 end
 
@@ -75,8 +76,24 @@ def make_companies
   puts "----------------"
 
   15.times do |n|
-    Company.create!(name: "Company_#{n}",
+    Company.create!(name: "Empresa_#{n+1}",
       remote_image_url: "http://20be948917086a968567-d6f97a9eba3cc258dac0d36dbb6d7ccd.r81.cf1.rackcdn.com/user2.png",
       owner: @user)
+  end
+end
+
+def make_products
+
+  puts "----------------"
+  puts "-- Products  --"
+  puts "----------------"
+
+  company = Company.find(1)
+
+  5.times do |n|
+    Product.create!(name: "Producto_#{n+1}",
+      price: Random.rand(100...100000),
+      stock: Random.rand(100),
+      branch: company)
   end
 end
