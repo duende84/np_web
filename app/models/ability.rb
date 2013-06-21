@@ -9,6 +9,9 @@ class Ability
       can :read, :all
       can [:destroy, :update, :password, :update_password], User, :id => user.id
       can :manage, Company, :owner_id => user.id
+      Company.where("owner_id = ?",user.id).each do |p|
+        can :manage, Product, :branch_id =>  p.id
+      end
     else
       can :read, :all
       can :create, User

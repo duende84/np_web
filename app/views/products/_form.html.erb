@@ -16,14 +16,14 @@
       <%= f.text_field :stock, :class => "text_field_form" %>
 
       <%= f.label :branch, "Empresa", :class => "label_form" %>
-      <% if (@product.branch.nil?) %>
-		    <%= f.collection_select :branch_id, Company.all, :id, :name, {:include_blank => 'Seleccione una empresa'},:class => "select_form" %>
-		    <% else %>
-		    <%= f.collection_select :branch_id, Company.all, :id, :name, {:selected => @product.branch.id},:class => "select_form" %>
-		    <% end %>
-
+      <% if (current_user.admin?)  %>
+        <%= f.collection_select :branch_id, Company.all, :id, :name, {:include_blank => 'Seleccione una empresa'},:class => "select_form" %>
+      <% elsif (@product.branch.nil?) %>
+		    <%= f.collection_select :branch_id, Company.where("owner_id = ?",current_user.id), :id, :name, {:include_blank => 'Seleccione una empresa'},:class => "select_form" %>
+		  <% else %>
+		    <%= f.collection_select :branch_id, Company.where("owner_id = ?",current_user.id), :id, :name, {:selected => @product.branch.id},:class => "select_form" %>
+		  <% end %>
       <%= f.submit "Guardar", class: "btn btn-primary btn_form"%>
-
     <% end %>
   </div>
 </div>

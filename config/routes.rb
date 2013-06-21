@@ -16,7 +16,7 @@ NuestrosPrecios::Application.routes.draw do
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :deletes
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   match '/auth/:provider/callback', :to => 'sessions#create_omniauth'
 
