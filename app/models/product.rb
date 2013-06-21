@@ -13,6 +13,7 @@
 #
 
 class Product < ActiveRecord::Base
-  attr_accessible :branch_id, :description, :name, :price, :stock, :branch
+  attr_accessible :branch_id, :description, :name, :price, :stock, :branch, :image, :remote_image_url
   belongs_to :branch, class_name: 'Company'
+  mount_uploader :image, ProductImageUploader
 end

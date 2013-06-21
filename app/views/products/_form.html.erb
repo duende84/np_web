@@ -23,6 +23,13 @@
 		  <% else %>
 		    <%= f.collection_select :branch_id, Company.where("owner_id = ?",current_user.id), :id, :name, {:selected => @product.branch.id},:class => "select_form" %>
 		  <% end %>
+
+      <%= f.label :image, 'Imagen', :class => "label_form" %>
+      <%= f.file_field :image, :class => "text_field_form" %>
+
+      <%= f.label :remote_image_url, "o URL de imagen", :class => "label_form" %>
+      <%= f.text_field :remote_image_url, :class => "text_field_form" %>
+
       <%= f.submit "Guardar", class: "btn btn-primary btn_form"%>
     <% end %>
   </div>

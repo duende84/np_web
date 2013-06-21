@@ -2,6 +2,9 @@
 <div id="reg_form" class="bg_form blog_content">
 	<div class="justify_text company_content">
 	  <h3>Producto <%= @product.id%></h3>
+	  <% if !@product.image_url(:show).to_s.blank? %>
+			<p><%= image_tag @product.image_url(:show).to_s %></p>
+		<% end %>
 	  <p>
 	  	<b>Nombre: </b>
 	  	<%= @product.name %>
