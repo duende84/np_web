@@ -1,16 +1,12 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 #search-form{
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;
-  width:intrinsic;
-
-  margin: 3% auto auto;
+  width: 80%;
+  margin: 1em 15%;
 }
 
 #search-form>input{
+  width: 70%;
+  height: 40px;
+  font-size: 22px;
   border-radius: 15px;
   border-color: #1b9ab2;
   border-style:solid;
@@ -18,37 +14,8 @@
   box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.075) inset;
 }
 
-#search-form>h1{
+#search-form-h1{
+  margin-top: 2%;
 	font-size: 60px;
 	font-family: berlinSans;
-}
-
-@media screen and (min-width: 1000px){
-	#search-form>input{
-		width: 500px;
-		height: 50px;
-		font-size: 26px;
-
-	  border-radius: 15px;
-	  border-color: #1b9ab2;
-	  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-	  border-style:solid;
-	  border-width:2px;
-	}
-}
-
-@media screen and (max-width: 850px){
-  #search-form>input{
-    width: 450px;
-    height: 50px;
-    font-size: 25px;
-  }
-}
-
-@media screen and (max-width: 600px){
-  #search-form>input{
-    width: 350px;
-    height: 40px;
-    font-size: 22px;
-  }
 }

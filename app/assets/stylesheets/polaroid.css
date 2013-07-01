@@ -1,15 +1,15 @@
 .polaroideffect{
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .polaroideffect li{
-  width: 120px;
-  height: 130px;
+  width:  120px;
+  height: 120px;
 
   background-color: rgba(153, 188, 218, 0.6);
   position: relative;
   float:left;
-  margin: 2%;
+  margin: 2% 3%;
 
   text-align: center;
   list-style-type: none;
@@ -19,15 +19,10 @@
   border-style:solid;
   border-width:1px;
 
-  -webkit-transition: all 1s linear;
-  -moz-transition: all 1s linear;
-  -o-transition: all 1s linear;
-}
-
-.polaroideffect li:hover {
-  width: 200px;
-  height: 200px;
-  font-size: 20px;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
 }
 
 .polaroideffect li img{
@@ -35,7 +30,10 @@
   margin-top: 10%;
   height: 75%;
   width: 80%;
-  -webkit-transition: all 1s linear;
-  -moz-transition: all 1s linear;
-  -o-transition: all 1s linear;
 }
+
+/*.polaroideffect li:hover {
+  width: 150px;
+  height: 150px;
+  font-size: 20px;
+}*/
