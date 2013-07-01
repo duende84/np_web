@@ -14,6 +14,16 @@ class SessionsController < ApplicationController
     end
   end
 
+  def create_json
+    user = User.find_by_email(params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      sign_in user
+      render json: user
+    else
+      render json: 'error'
+    end
+  end
+
   def create_omniauth
     auth_hash = request.env['omniauth.auth']
     # render :json => auth_hash
