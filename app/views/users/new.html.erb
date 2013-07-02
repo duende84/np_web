@@ -20,6 +20,8 @@
         <%= f.password_field :password_confirmation, :class => "text_field_form" %>
 
         <%= f.submit "Crear mi cuenta", class: "btn btn-primary btn_form" %>
+        <hr>
+         <p>¿Ya eres miembro? <%= link_to "Ingresa aqui!", signin_path %></p>
       <% end %>
     </div>
   </div>
