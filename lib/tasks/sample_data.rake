@@ -92,7 +92,7 @@ def make_products
 
   5.times do |n|
     Product.create!(name: "Producto_#{n+1}",
-      price: Random.rand(100...100000),
+      price: Random.rand(1...1000),
       stock: Random.rand(100),
       branch: company)
   end
