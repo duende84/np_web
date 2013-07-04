@@ -12,6 +12,16 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def getCompaniesWithProducts
+    @companies = Company.all
+    @products = Product.all
+
+    render :json => {
+      :companies => @companies,
+      :products => @products
+    }
+  end
+
   # GET /companies/1
   # GET /companies/1.json
   def show

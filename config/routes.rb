@@ -22,6 +22,7 @@ NuestrosPrecios::Application.routes.draw do
 
   match '/api/users/new', :to => 'users#create_json'
   match '/api/login', :to => 'sessions#create_json'
+  match '/api/list', :to => 'companies#getCompaniesWithProducts'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

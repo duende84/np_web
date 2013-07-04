@@ -70,7 +70,7 @@ class UsersController < ApplicationController
     else
       render json: @user.errors
     end
-end
+  end
 
   # PUT /users/1
   # PUT /users/1.json

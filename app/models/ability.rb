@@ -15,6 +15,7 @@ class Ability
     else
       can :read, :all
       can [:create, :create_json], User
+      can [:getCompaniesWithProducts], Company
     end
     #
     # The first argument to `can` is the action you are giving the user
