@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
+ruby '2.1.1'
+#ruby-gemset=np_web
 
-ruby '1.9.3'
 gem 'rails', '3.2.13'
 gem "json", "~> 1.8.1"
 
